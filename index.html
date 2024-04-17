@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Animation Page || Web Addicted</title>
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div class="bubble" id="bubble" style="--top: 50vh; --left: 50vw">
+      <div class="bubble__rainbow"></div>
+      <div class="bubble__white"></div>
+      <div class="bubble__bright-circle bubble__bright-circle--first"></div>
+      <div class="bubble__bright-circle bubble__bright-circle--second"></div>
+      <div class="bubble__brightness bubble__brightness--first"></div>
+      <div class="bubble__brightness bubble__brightness--second"></div>
+    </div>
+    <script>
+              const bubble = document.getElementById('bubble');
+
+      const mouseFunction = (mouse) => {
+        const clientX = mouse.clientX ? mouse.clientX : mouse.touches[0].clientX;
+        const clientY = mouse.clientY ? mouse.clientY : mouse.touches[0].clientY;
+        bubble.style = `--top: ${clientY}px; --left: ${clientX}px;`;
+      };
+
+      window.addEventListener('mousemove', mouseFunction);
+      window.addEventListener('touchstart', mouseFunction);
+    </script>
+  </body>
+</html>
